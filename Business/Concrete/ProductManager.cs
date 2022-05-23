@@ -36,14 +36,13 @@ namespace Business.Concrete
         public IDataResult<List<Product>> GetAll()
         {
             //iş kodları
-            if (DateTime.Now.Hour==22)
+            if (DateTime.Now.Hour == 13)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
-            
+
             return new SuccessDataResult<List<Product>>(_ProductDal.GetAll(),Messages.ProductsListed);
         }
-
         public IDataResult<List<Product>>GetAllCategoryId(int id)
         {
             return new SuccessDataResult<List<Product>>(_ProductDal.GetAll(p => p.CategoryId == id));
