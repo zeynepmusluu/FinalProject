@@ -48,6 +48,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+
         //post requestlerde data verilir
         [HttpPost("add")]
         public IActionResult Add(Product product)
